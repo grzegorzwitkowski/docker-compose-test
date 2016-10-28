@@ -1,0 +1,15 @@
+apply plugin: "java"
+
+group "com.github.grzegorzwitkowski"
+version "1.0-SNAPSHOT"
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web:1.4.1.RELEASE"
+    compile "org.springframework.data:spring-data-mongodb:1.9.4.RELEASE"
+}
