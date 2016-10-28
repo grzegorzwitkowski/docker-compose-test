@@ -1,0 +1,4 @@
+# setup user
+
+use docker_compose_test
+db.createUser({user: "dockercomposetest", pwd: "dockercomposetest", roles: ["readWrite"]})
