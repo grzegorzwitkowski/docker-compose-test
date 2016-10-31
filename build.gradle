@@ -22,19 +22,17 @@ dependencies {
 
 mainClassName = "com.github.grzegorzwitkowski.dockercomposetest.Main"
 
-distZip {
+installDist {
     doLast {
         copy {
-            from "build/distributions/${project.name}-${project.version}.zip"
-            into "docker/api"
+            from "build/install/${project.name}/lib"
+            into "docker/api/jars"
         }
     }
 }
 
 clean {
     doFirst {
-        delete fileTree("docker/api/") {
-            include "${project.name}*.zip"
-        }
+        delete "docker/api/jars/"
     }
 }
