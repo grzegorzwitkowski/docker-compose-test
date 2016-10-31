@@ -9,13 +9,35 @@ $ ./gradlew installDist
 ## run docker-compose
 
 ```
-$ docker-compose up
+$ docker-compose up -d
 ```
 
-## create user in Mongo
+## setup Mongo (one time action)
 
 ```
-docker exec -it dockercomposetest_mongo_1 mongo
+docker exec -it mongo mongo docker_compose_test setup/mongo.js
 ```
 
-then execute scripts from mongo.txt
+## call api
+
+```
+$ curl http://localhost:8080/users
+```
+
+## stop containers
+
+```
+$ docker-compose down
+```
+
+## stop containers and remove images
+
+```
+$ docker-compose down --rmi all
+```
+
+## force build images at startup
+
+```
+$ docker-compose up --build
+```

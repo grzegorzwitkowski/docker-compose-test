@@ -1,10 +1,12 @@
 version: '2'
 services:
   mongo:
-    image: mongo:3.2.10
+    container_name: mongo
+    build: docker/mongo
     ports:
       - "27017:27017"
   api:
+    container_name: api
     build: docker/api
     ports:
       - "8080:8080"
