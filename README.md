@@ -9,5 +9,13 @@ $ ./gradlew installDist
 ## run docker-compose
 
 ```
-$ docker-compose -f docker/docker-compose.yml up
+$ docker-compose up
 ```
+
+## create user in Mongo
+
+```
+docker exec -it dockercomposetest_mongo_1 mongo
+```
+
+then execute scripts from mongo.txt
